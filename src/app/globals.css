@@ -1,8 +1,18 @@
 :root{
   --background: #ffffff;
-  --foorground: #1a1a1a;
+  --foreground: #1a1a1a;
   --primary: #063390;
   --accent: #ff5800;
+  --secondary-text: #4d4d4d;
+  --tertiary-text: #767676;
+  --surface: #ffffff;
+  --surface-secondary: #EBEFF6;
+  --surface-tertiary:#F5F5F3;
+  --border: #D9DDE5;
+  --error: #B42318;
+  --success: #146C43;
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-source-sans), Arial, sans-serif;
 }
 
 * {
@@ -16,15 +26,20 @@ html{
 }
 
 body{
+  min-height: 100vh;
   background: var(--background);
-  color: var(--foorground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4,h6{
+  font-family: var(--font-heading);
 }
 
 a{
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 button{
