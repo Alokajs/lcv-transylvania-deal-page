@@ -51,3 +51,124 @@
   color: var(--primary);
   border-color: var(--primary);
 }
+
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 797px;
+  padding: 250px 20px 35px;
+}
+
+.heroLabel {
+  font-size: 30px;
+  line-height: 31px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color:#ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 55px;
+  letter-spacing: 0.02em;
+  padding: 8px 0px;
+}
+
+.heroDetails {
+  font-size: 26px;
+  color: #ffffff;
+  line-height: 42px;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.heroPrice {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  padding: 10px 0px;
+}
+
+.heroPriceLeft, .heroPriceRight {
+  border-left: 1px solid #ffffff;
+  padding-left: 30px;
+}
+
+.heroPrice p {
+  font-size: 26px;
+  color: #ffffff;
+  line-height: 50px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.heroCurrentPrice {
+  font-size: 104px;
+  line-height: 102px;
+  font-weight: 500;
+}
+
+.heroOriginalPrice {
+  text-decoration: line-through;
+}
+
+.saveUpButton {
+  background-color: var(--success);
+  font-size: 16px !important;
+  color: #ffffff;
+  line-height: 22px !important;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 175px;
+}
+
+.heroButton, .viewImagesButton, .watchVideoButton {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 230px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.heroButton {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
+.viewImagesButton {
+  background-color: #DCE5F5;
+  color: #031E58;
+  border-color: #031E58;
+}
+
+.watchVideoButton {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.heroButton:hover, .watchVideoButton:hover {
+  opacity: 0.90;
+
+}
+
+.mediaButtons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
