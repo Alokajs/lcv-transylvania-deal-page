@@ -345,6 +345,68 @@ return (
          ))}
       </div>
     </section>
+    {/* Testimonials */}
+    <section className={styles.testimonials}>
+      <p className={styles.sectionName}>08. Testimonials</p>
+      <h2 className={styles.sectionHeader}>Words from Travellers</h2>
+      <div className={styles.testimonialsGrid}>
+        <div className={styles.testimonialsCard}>
+          <div className={styles.testimonialsIcon}>
+            <Image
+              src="/quote.svg"
+              alt=""
+              width={25}
+              height={25}
+            />
+          </div>
+          <h3 className={styles.testimonialsHeader}>A little bit of everything</h3>
+          <p className={styles.testimonialsContent}>“Bran Castle was definitely the highlight for me. We also loved wandering around Bucharest and seeing all the beautiful old buildings. Such an interesting few days away.”
+          <br /><br /><span className={styles.testimonialsReviewer}>Tamsin Vale</span></p>
+        </div>
+
+        <div className={styles.testimonialsCard}>
+          <div className={styles.testimonialsIcon}>
+            <Image
+              src="/quote.svg"
+              alt=""
+              width={25}
+              height={25}
+            />
+          </div>
+          <h3 className={styles.testimonialsHeader}>A destination worth discovering</h3>
+          <p className={styles.testimonialsContent}>“Bucharest was such a pleasant surprise. The hotel made a comfortable base, and the Transylvania day trip was a lovely way to see more of the country.”
+          <br /><br /><span className={styles.testimonialsReviewer}>Elspeth Rowe</span></p>
+        </div>
+
+        <div className={styles.testimonialsCard}>
+          <div className={styles.testimonialsIcon}>
+            <Image
+              src="/quote.svg"
+              alt=""
+              width={25}
+              height={25}
+            />
+          </div>
+          <h3 className={styles.testimonialsHeader}>More than just a city break</h3>
+          <p className={styles.testimonialsContent}>“I didn't expect Romania to have so much to explore. The castles, mountain views and little streets in Brașov made the trip really memorable.”
+          <br /><br /><span className={styles.testimonialsReviewer}>Fergus Hales</span></p>
+        </div>
+
+        <div className={styles.testimonialsCard}>
+          <div className={styles.testimonialsIcon}>
+            <Image
+              src="/quote.svg"
+              alt=""
+              width={25}
+              height={25}
+            />
+          </div>
+          <h3 className={styles.testimonialsHeader}>A Castle Worth Visiting</h3>
+          <p className={styles.testimonialsContent}>“Seeing Bran Castle in person was wonderful. The journey through Transylvania was just as memorable, with beautiful mountain scenery and charming little towns along the way.”
+          <br /><br /><span className={styles.testimonialsReviewer}>Iona Mercer</span></p>
+        </div>
+      </div>      
+    </section>
   </main>
   </>
 )}
