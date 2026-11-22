@@ -1,3 +1,4 @@
+/* Header */
 .headerContainer {
   max-width: 1440px;
   width: 100%;
@@ -52,12 +53,14 @@
   border-color: var(--primary);
 }
 
+/* Hero */
 .hero {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 797px;
   padding: 250px 20px 35px;
+  box-shadow: inset 435px 0 198px 0 #052E82;
 }
 
 .heroLabel {
@@ -129,6 +132,14 @@
   max-width: 175px;
 }
 
+p.priceBasis {
+  color: #ffffff;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 3px 0px 5px;
+}
+
 .heroButton, .viewImagesButton, .watchVideoButton {
   font-size: 16px;
   line-height: 22px;
@@ -171,4 +182,88 @@
   align-items: center;
   justify-content: flex-end;
   gap: 20px;
+}
+
+/* Overview */
+.overview {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.89),
+      rgba(255, 255, 255, 0.89)
+    ),
+  var(--overview-image);
+  padding: 18px 20px 0px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.sectionName {
+  color: var(--foreground);
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  padding: 0px 0px 20px;
+}
+
+.sectionHeader {
+  color: var(--primary);
+  font-size: 36px;
+  line-height: 55px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.sectionContent p {
+  color: var(--foreground);
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+}
+
+.overviewLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  align-self: center;
+}
+
+.overviewGallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-width: 684px;
+  justify-self: end;
+}
+
+.overviewGalleryMain {
+  grid-column: 1 / -1;
+}
+
+.overviewGallery > img,
+.overviewGalleryLast > img {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.overviewGalleryLast {
+  position: relative;
+}
+
+.overviewGalleryLast .viewImagesButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: auto;
 }
