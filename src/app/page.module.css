@@ -267,3 +267,77 @@ p.priceBasis {
   right: 10px;
   width: auto;
 }
+
+/* Highlight */
+.highlight {
+  padding: 18px 20px 0px;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.highlightCard {
+  background-color: rgba(235, 239, 246, 0.55);
+  border: 1px solid rgba(217, 221, 229, 0.65);
+  width: 100%;
+  min-height: 30px;
+  padding: 25px;
+  border-radius: 17px;
+}
+
+.highlightCardTop {
+  grid-column: span 3;
+}
+
+.highlightCardRestaurants {
+  grid-column: span 3;
+}
+
+.highlightCardAttractions {
+  grid-column: span 4;
+}
+
+.highlightCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  gap: 5px;
+}
+
+.highlightHeader {
+  font-size: 20px;
+  color: var(--foreground);
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.highlightContent {
+  font-size: 16px;
+  color: #4d4d4d;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+.highlightChipsFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.highlightContentChips {
+  font-style: italic;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #D9D9D6;
+  padding: 4px;
+  border-radius: 16px;
+  padding: 4px 16px;
+  white-space: nowrap;
+}
+

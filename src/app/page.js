@@ -98,38 +98,138 @@ return (
       <div className={styles.overviewGallery}>
         <Image className={styles.overviewGalleryMain}
         src={dealData.overview.images[0].path}
-        alt={dealData.overview.images[0].alt}
+        alt="Illuminated historic building and equestrian statue in Bucharest beneath a colourful sunset sky."
         width={684}
         height={456}        
         />
 
         <Image
         src={dealData.overview.images[1].path}
-        alt={dealData.overview.images[1].alt}
+        alt="Colourful historic buildings and rooftops in Sighisoara, surrounded by green trees."
         width={338}
         height={225}       
         />
         <div className={styles.overviewGalleryLast}>
-        <Image
-        src={dealData.overview.images[2].path}
-        alt={dealData.overview.images[2].alt}
-        width={338}
-        height={225}        
-        />
-        <button className={styles.viewImagesButton}>
-      <span>View all images</span>
-      <Image
-        src="/view-all-images.svg"
-        alt=""
-        width={16}
-        height={16}
-      />
-       </button>
-       </div>
-        
-
+          <Image
+          src={dealData.overview.images[2].path}
+          alt="Bran Castle rising above dense green trees beneath a colourful evening sky."
+          width={338}
+          height={225}        
+          />
+          <button className={styles.viewImagesButton}>
+            <span>View all images</span>
+            <Image
+              src="/view-all-images.svg"
+              alt=""
+              width={16}
+              height={16}
+            />
+         </button>
+        </div>       
       </div>   
     </div>
+    </section>
+    <section className={styles.highlight}>
+      <p className={styles.sectionName}>02. Highlights</p>
+      <h2 className={styles.sectionHeader}>The Highlights of Your Holiday</h2>
+      <div className={styles.highlightGrid}>
+        <div className={`${styles.highlightCard} ${styles.highlightCardTop}`}>
+          <div className={styles.highlightCardContent}>
+          <div className={styles.highlightIcon}>
+            <Image
+              src="/plane.svg"
+              alt=""
+              width={49}
+              height={32}
+            />
+          </div>
+          <h3 className={styles.highlightHeader}>Return flights from London</h3>
+          <p className={styles.highlightContent}>Regional airports available upon request.</p>
+          </div>
+        </div>
+
+        <div className={`${styles.highlightCard} ${styles.highlightCardTop}`}>
+          <div className={styles.highlightCardContent}>
+          <div className={styles.highlightIcon}>
+            <Image
+              src="/hotel.svg"
+              alt=""
+              width={49}
+              height={32}
+            />
+          </div>
+          <h3 className={styles.highlightHeader}>Stay 3 nights in Bucharest at Parliament Hotel 4⭐</h3>
+          </div>
+        </div>
+
+        <div className={`${styles.highlightCard} ${styles.highlightCardTop}`}>
+          <div className={styles.highlightCardContent}>
+          <div className={styles.highlightIcon}>
+            <Image
+              src="/star.svg"
+              alt=""
+              width={32}
+              height={32}
+            />
+          </div>
+          <h3 className={styles.highlightHeader}>Complimentary tour:</h3>
+          <p className={styles.highlightContent}>Transylvania Day Trip from Bucharest</p>
+          </div>
+        </div>
+
+        <div className={`${styles.highlightCard} ${styles.highlightCardTop}`}>
+          <div className={styles.highlightCardContent}>
+          <div className={styles.highlightIcon}>
+            <Image
+              src="/shield-check.svg"
+              alt=""
+              width={32}
+              height={32}
+            />
+          </div>
+          <h3 className={styles.highlightHeader}>Financially protected</h3>
+          </div>
+        </div>
+
+        <div className={`${styles.highlightCard} ${styles.highlightCardRestaurants}`}>
+          <div className={styles.highlightCardContent}>
+          <div className={styles.highlightIcon}>
+            <Image
+              src="/restaurant.svg"
+              alt=""
+              width={32}
+              height={32}
+            />
+          </div>
+          <h3 className={styles.highlightHeader}>Nearby Restaurants</h3>
+          <div className={styles.highlightChipsFlex}>
+          <p className={`${styles.highlightContent} ${styles.highlightContentChips}`}>Pergola Cotroceni</p>
+          <p className={`${styles.highlightContent} ${styles.highlightContentChips}`}>Bocca Lupo</p>
+          <p className={`${styles.highlightContent} ${styles.highlightContentChips}`}>Derby</p>
+          </div>
+          </div>
+        </div>
+        
+         <div className={`${styles.highlightCard} ${styles.highlightCardAttractions}`}>
+          <div className={styles.highlightCardContent}>
+          <div className={styles.highlightIcon}>
+            <Image
+              src="/map-pin.svg"
+              alt=""
+              width={29}
+              height={29}
+            />
+          </div>
+          <h3 className={styles.highlightHeader}>Nearby Attractions</h3>
+          <div className={styles.highlightChipsFlex}>
+          <p className={`${styles.highlightContent} ${styles.highlightContentChips}`}>The Stairs of Happiness</p>
+          <p className={`${styles.highlightContent} ${styles.highlightContentChips}`}>The Zodiac Fountain</p>
+          <p className={`${styles.highlightContent} ${styles.highlightContentChips}`}>Palace of Parliament</p>
+          </div>
+          </div>
+        </div>
+
+      </div>
     </section>
   </main>
   </>
