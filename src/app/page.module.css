@@ -460,7 +460,7 @@ p.priceBasis {
       rgba(255, 255, 255, 0.89)
     ),
   var(--hotels-image);
-  padding: 18px 20px 0px 20px;
+  padding: 18px 20px 5px 20px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
@@ -530,4 +530,58 @@ p.priceBasis {
   justify-content:flex-start;
   gap: 5px;
   align-self: center;
+}
+
+/* Excursions */
+.excursions {
+  padding: 18px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  align-self: center;
+}
+
+.excursionImage {
+  text-align: center;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.excursionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  padding-top: 10px;
+}
+
+.excursionCard {
+  background-color: var(--surface-secondary);
+  border-radius: 11px;
+  padding: 3px 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.excursionsName {
+  color: var(--foreground);
+  font-size: 18px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.excursionsPrice {
+  color: var(--foreground);
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  background-color: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 8px 4px;
 }

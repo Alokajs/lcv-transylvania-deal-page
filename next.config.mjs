@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.techneapp-staging.site",
          },
+      {
+        protocol: "https",
+        hostname: "www.lcv-staging.site",
+      },
     ],
   },
 };

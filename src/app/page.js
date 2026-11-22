@@ -7,6 +7,13 @@ import { useState } from "react";
 
 export default function Home () {
   const [showAllDays, setShowAllDays] = useState(false);
+  const excursions = dealData.excursions.match(/<li>(.*?)<\/li>/g).map((item) => item.replace(/<\/?li>/g, ""));
+  const uniqueExcursions = excursions
+  .filter((item, index) => excursions.indexOf(item) === index)
+  .map((item) => {
+    const [name, price] = item.split(" - £");
+    return { name, price: `£${price}` };
+  });
 return (
   <>
   {/* header */}
@@ -318,6 +325,25 @@ return (
          <div className={styles.sectionContent} dangerouslySetInnerHTML={{__html: dealData.hotels[0].description }}
          />
        </div>
+    </section>
+    {/* excursions */}
+    <section className={styles.excursions}>
+      <p className={styles.sectionName}>06. Excursions</p>
+      <h2 className={styles.sectionHeader}>Experiences Beyond the Ordinary</h2>
+      <Image className={styles.excursionImage}
+      src={dealData.excursionImage.path}
+      alt="Three travel scenes: couple by blue-domed buildings at sunset, two people cycling on a pier, and friends taking a selfie at a night concert"
+      width={1472}
+      height={769}
+      />
+      <div className={styles.excursionsGrid}>
+        {uniqueExcursions.map((excursion, index) => (
+          <div className={styles.excursionCard} key={index}>
+            <p className={styles.excursionsName}>{excursion.name}</p>
+             <span className={styles.excursionsPrice}>{excursion.price}</span>
+          </div>
+         ))}
+      </div>
     </section>
   </main>
   </>
