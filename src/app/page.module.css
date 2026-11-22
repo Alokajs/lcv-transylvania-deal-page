@@ -348,7 +348,7 @@ p.priceBasis {
 
 /* Itineraries */
 .itineraries {
-  padding: 18px 20px 0px;
+  padding: 18px 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
@@ -447,4 +447,87 @@ p.priceBasis {
   border: 1px solid var(--border);
   appearance: none;
   margin: 0 auto;
+}
+
+/* Hotel */
+.hotels {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.89),
+      rgba(255, 255, 255, 0.89)
+    ),
+  var(--hotels-image);
+  padding: 18px 20px 0px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.sectionName {
+  color: var(--foreground);
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  padding: 0px 0px 20px;
+}
+
+.sectionHeader {
+  color: var(--primary);
+  font-size: 36px;
+  line-height: 55px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.sectionContent p {
+  color: var(--foreground);
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+}
+
+.hotelGallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-width: 684px;
+  justify-self: start;
+}
+
+.hotelGalleryMain {
+  grid-column: 1 / -1;
+}
+
+.hotelGallery > img,
+.hotelGalleryLast > img {
+  border-radius: 15px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hotelGalleryLast {
+  position: relative;
+}
+
+.hotelGalleryLast .viewImagesButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: auto;
+}
+
+.hotelRight, .hotelLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  align-self: center;
 }

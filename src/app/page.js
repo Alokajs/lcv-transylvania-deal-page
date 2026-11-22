@@ -133,6 +133,7 @@ return (
       </div>   
     </div>
     </section>
+     {/* highlight */}
     <section className={styles.highlight}>
       <p className={styles.sectionName}>02. Highlights</p>
       <h2 className={styles.sectionHeader}>The Highlights of Your Holiday</h2>
@@ -234,6 +235,7 @@ return (
         </div>
       </div>
     </section>
+     {/* itineraries */}
     <section className={styles.itineraries}>
         <p className={styles.sectionName}>03. Itinerary</p>
       <h2 className={styles.sectionHeader}>Your Journey, Day by Day</h2>
@@ -261,6 +263,61 @@ return (
         height={16}
       />
        </button>
+    </section>
+    {/* hotels */}
+    <section className={styles.hotels} style={{"--hotels-image": `url(${dealData.hotels[0].images[4].path})` }}>
+     <div className={styles.hotelLeft}>
+      <p className={styles.sectionName}>04. Hotel</p>
+      <h2 className={styles.sectionHeader}>Your Stay in Bucharest</h2>
+      <div className={styles.hotelGallery}>
+        <Image className={styles.hotelGalleryMain}
+        src={dealData.hotels[0].images[5].path}
+        alt="Modern hotel lounge with cream curved sofas, round table, champagne glasses and warm wooden wall lighting"
+        width={684}
+        height={438}        
+        />
+
+        <Image
+        src={dealData.hotels[0].images[1].path}
+        alt="Modern hotel bathroom with white marble walls, round illuminated mirror, sink and toiletries"
+        width={338}
+        height={232}       
+        />
+        <div className={styles.hotelGalleryLast}>
+          <Image
+          src={dealData.hotels[0].images[2].path}
+          alt=""
+          width={338}
+          height={232}        
+          />
+          <button className={styles.viewImagesButton}>
+            <span>View all images</span>
+            <Image
+              src="/view-all-images.svg"
+              alt="Indoor hotel swimming pool with blue water, wooden walls and teal mosaic feature wall"
+              width={16}
+              height={16}
+            />
+         </button>
+        </div>       
+      </div>   
+    </div>
+    <div className={styles.hotelRight}>
+    <h3 className={styles.subHeader}>{dealData.hotels[0].name}</h3>
+    <div className={styles.hotelRating}>
+      {Array.from({ length: Number(dealData.hotels[0].rating) }).map((_, index) => (
+        <Image
+              key={index}
+              src="/rating_star.svg"
+              alt=""
+              width={18}
+              height={18}
+            />
+            ))}
+            </div>
+         <div className={styles.sectionContent} dangerouslySetInnerHTML={{__html: dealData.hotels[0].description }}
+         />
+       </div>
     </section>
   </main>
   </>
