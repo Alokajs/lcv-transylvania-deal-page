@@ -140,7 +140,7 @@ p.priceBasis {
   padding: 3px 0px 5px;
 }
 
-.heroButton, .viewImagesButton, .watchVideoButton {
+.heroButton, .viewImagesButton, .watchVideoButton, .viewAllButton {
   font-size: 16px;
   line-height: 22px;
   font-weight: 600;
@@ -271,6 +271,11 @@ p.priceBasis {
 /* Highlight */
 .highlight {
   padding: 18px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  align-self: center;
 }
 
 .highlightGrid {
@@ -341,3 +346,105 @@ p.priceBasis {
   white-space: nowrap;
 }
 
+/* Itineraries */
+.itineraries {
+  padding: 18px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  align-self: center;
+}
+
+.itineraryCardNo {
+  background-color: var(--primary);
+  width: 45px;
+  height: 45px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.subHeader {
+  font-size: 20px;
+  color: var(--foreground);
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.date {
+  color: var(--tertiary-text);
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+}
+
+.itineraryCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 10px;
+}
+
+.itineraryCardNo {
+  position: relative;
+  z-index: 1;
+}
+
+.itineraries .sectionContent {
+  padding-left: 60px;
+  padding-bottom: 10px;
+}
+
+.itineraryBlock {
+  position: relative;
+  padding-top: 10px;
+}
+
+.itineraryCard {
+  position: relative;
+}
+
+.itineraryCard::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 66px;
+  bottom: 8px;
+  width: 2px;
+  background-color: var(--border);
+}
+
+.itineraryCard:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--border);
+}
+
+.itineraryCard:not(:last-child) {
+  position: relative; 
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.viewAllButton {
+  max-width: 95% !important;
+  background-color: #ffffff;
+  color: #767676;
+  border: 1px solid var(--border);
+  appearance: none;
+  margin: 0 auto;
+}

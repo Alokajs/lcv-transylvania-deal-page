@@ -1,8 +1,12 @@
+"use client";
+
 import styles from "./page.module.css"
 import Image  from "next/image"
 import dealData from "../data/deal-page-data.json"
+import { useState } from "react";
 
 export default function Home () {
+  const [showAllDays, setShowAllDays] = useState(false);
 return (
   <>
   {/* header */}
@@ -228,8 +232,35 @@ return (
           </div>
           </div>
         </div>
-
       </div>
+    </section>
+    <section className={styles.itineraries}>
+        <p className={styles.sectionName}>03. Itinerary</p>
+      <h2 className={styles.sectionHeader}>Your Journey, Day by Day</h2>
+        <div className={styles.itineraryBlock}>
+          {dealData.itineraries.slice(0, showAllDays ? 4 : 2).map((itinerary) => (
+          <div className={styles.itineraryCard} key={itinerary.id}>
+            <div className={styles.itineraryCardHeader}>
+            <p className={styles.itineraryCardNo}>{String(itinerary.day).padStart(2, "0")}</p>
+            <div>        
+            <h3 className={styles.subHeader}>{itinerary.content.match(/<strong>(.*?)<\/strong>/)?.[1].replace(/&nbsp;/g, " ").trim()}</h3>
+            <p className={styles.date}>Day {String(itinerary.day).padStart(2, "0")}</p>
+            </div>
+            </div>
+            <div className={styles.sectionContent} dangerouslySetInnerHTML={{__html: itinerary.content.replace(/^<p>[\s\S]*?<\/p>/, "") }}
+            />
+         </div>
+         ))}
+        </div>
+        <button className={styles.viewAllButton} onClick={() => setShowAllDays(!showAllDays)}>
+      <span>{showAllDays ? "Show less" : "View all 4 days"}</span>
+      <Image
+        src={showAllDays ? "/chevron_up.svg" : "/chevron.svg"}
+        alt=""
+        width={16}
+        height={16}
+      />
+       </button>
     </section>
   </main>
   </>
