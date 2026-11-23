@@ -140,7 +140,7 @@ p.priceBasis {
   padding: 3px 0px 5px;
 }
 
-.heroButton, .viewImagesButton, .watchVideoButton, .viewAllButton {
+.heroButton, .viewImagesButton, .watchVideoButton, .viewAllButton, .readMoreButton, .showLessButton {
   font-size: 16px;
   line-height: 22px;
   font-weight: 600;
@@ -629,4 +629,50 @@ p.priceBasis {
 
 .testimonialsReviewer {
   font-weight: 700;
+}
+
+/* FinePrint */
+.finePrint {
+  padding: 18px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  align-self: center;
+}
+
+.finePrintGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.finePrintMore {
+  grid-column: 1 / -1;
+}
+
+.finePrintImage {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.finePrintFirstList, .finePrintMore {
+  color: var(--foreground);
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.readMoreButton, .showLessButton {
+  background-color: #ffffff;
+  color: #767676;
+  border: 1px solid var(--border);
+  appearance: none;
+  margin: 0 auto;
+  margin-top: 20px;
 }

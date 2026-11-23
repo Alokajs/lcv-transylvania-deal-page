@@ -14,6 +14,8 @@ export default function Home () {
     const [name, price] = item.split(" - £");
     return { name, price: `£${price}` };
   });
+  const finePrintItems = dealData.finePrint.match(/<li>[\s\S]*?<\/li>/g) || [];
+  const [showAllFinePrint, setShowAllFinePrint] = useState(false);
 return (
   <>
   {/* header */}
@@ -293,7 +295,7 @@ return (
         <div className={styles.hotelGalleryLast}>
           <Image
           src={dealData.hotels[0].images[2].path}
-          alt=""
+          alt="Indoor hotel swimming pool with blue water, wooden walls and teal mosaic feature wall"
           width={338}
           height={232}        
           />
@@ -301,7 +303,7 @@ return (
             <span>View all images</span>
             <Image
               src="/view-all-images.svg"
-              alt="Indoor hotel swimming pool with blue water, wooden walls and teal mosaic feature wall"
+              alt=""
               width={16}
               height={16}
             />
@@ -406,6 +408,72 @@ return (
           <br /><br /><span className={styles.testimonialsReviewer}>Iona Mercer</span></p>
         </div>
       </div>      
+    </section>
+     {/* FinePrint */}
+    <section className={styles.finePrint}>
+      <p className={styles.sectionName}>10. Fine Print</p>
+      <h2 className={styles.sectionHeader}>Important Things to Know</h2>
+      <div className={styles.finePrintGrid}>
+      <div className={styles.finePrintLeft}>
+      <Image className={styles.finePrintImage}
+      src={dealData.finePrintImage.path}
+      alt=""
+      width={802}
+      height={443}
+      />
+      </div>
+      <div className={styles.finePrintRight}>
+        <ol className={styles.finePrintFirstList}>
+          {finePrintItems.slice(0, 8).map((item, index) => (
+            <li
+        key={index}
+        dangerouslySetInnerHTML={{
+          __html: item.replace(/^<li>|<\/li>$/g, "")
+         }}
+         />
+       ))}
+      </ol>
+      {!showAllFinePrint && (
+        <button
+          className={styles.readMoreButton}
+          onClick={() => setShowAllFinePrint(true)}
+        >
+          <span>Read more</span>
+          <Image
+            src="/chevron.svg"
+            alt=""
+            width={16}
+            height={16}
+          />
+        </button>
+      )}
+        </div>
+        {showAllFinePrint && (
+        <div className={styles.finePrintMore}>
+          <ol start={9}>
+            {finePrintItems.slice(8).map((item, index) => (
+              <li
+                key={index}
+                dangerouslySetInnerHTML={{
+                  __html: item.replace(/^<li>|<\/li>$/g, "")
+                }}
+              />
+            ))}
+          </ol>
+          <button
+          className={styles.showLessButton}
+          onClick={() => setShowAllFinePrint(false)}>
+          <span>Show less</span>
+          <Image
+            src="/chevron_up.svg"
+            alt=""
+            width={16}
+            height={16}
+          />
+          </button>
+        </div>
+      )}
+      </div>
     </section>
   </main>
   </>
