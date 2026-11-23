@@ -25,6 +25,8 @@ export default function Home () {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [openFaq, setOpenFaq] = useState(null);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 return (
   <>
   {/* header */}
@@ -39,7 +41,7 @@ return (
       />
       </a>
       <nav className={styles.navigation}>
-        <ul className={styles.navList}>
+        <ul className={`${styles.navList} ${isMenuOpen ? styles.navOpen : ""}`}>
           <li><a href="#overview">Overview</a></li>
           <li><a href="#itinerary">Itinerary</a></li>
           <li><a href="#hotel">Hotel</a></li>
@@ -52,6 +54,9 @@ return (
         <a href="#enquiry" className={styles.enquireButton}>
           Enquire now
         </a>
+        <button type="button" className={styles.mobileMenu} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation" aria-expanded={isMenuOpen}>
+          <Image src="/menu.svg" alt="" width={28} height={28} />
+        </button>
       </div>
     </div>
   </header>

@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .navList {
@@ -21,6 +22,18 @@
   font-weight: 500;
   line-height: 40px;
   text-decoration: none;
+}
+
+.mobileMenu {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navOpen {
+  display: flex;
 }
 
 .headerActions {
@@ -193,7 +206,7 @@ p.priceBasis {
       rgba(255, 255, 255, 0.89)
     ),
   var(--overview-image);
-  padding: 18px 20px 0px 20px;
+  padding: 18px 20px 5px 20px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
@@ -328,9 +341,9 @@ p.priceBasis {
 }
 
 .highlightChipsFlex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 11px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .highlightContentChips {
@@ -342,6 +355,7 @@ p.priceBasis {
   border-radius: 16px;
   padding: 4px 16px;
   white-space: nowrap;
+  font-size: 14px;
 }
 
 /* Itineraries */
@@ -465,31 +479,6 @@ p.priceBasis {
   align-items: start;
 }
 
-.sectionName {
-  color: var(--foreground);
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.02em;
-  font-weight: 700;
-  padding: 0px 0px 20px;
-}
-
-.sectionHeader {
-  color: var(--primary);
-  font-size: 36px;
-  line-height: 55px;
-  letter-spacing: 0.02em;
-  font-weight: 600;
-}
-
-.sectionContent p {
-  color: var(--foreground);
-  font-size: 16px;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-  font-weight: normal;
-}
-
 .hotelGallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -551,6 +540,7 @@ p.priceBasis {
   border-radius: 15px;
   width: 100%;
   padding-top: 5px;
+  height: auto;
 }
 
 .destinationTabs {
@@ -603,8 +593,10 @@ p.priceBasis {
   font-size: 16px;
   letter-spacing: 0.02em;
   font-weight: normal;
-  padding: 0 0 0 20px;
+  padding: 5px 5px 5px 25px;
   background-color: var(--surface-secondary);
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
 .destinationThreeColumns {
@@ -634,6 +626,7 @@ p.priceBasis {
   border-radius: 15px;
   margin: 0 auto;
   width: 100%;
+  height: auto;
 }
 
 .excursionsGrid {
@@ -770,6 +763,7 @@ p.priceBasis {
 .paymentImage {
   border-radius: 15px;
   width: 100%;
+  height: auto;
 }
 
 .paymentMore{
@@ -1038,6 +1032,194 @@ p.priceBasis {
   letter-spacing: 0.02em;
   display: flex;
   justify-content: end;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+/* Header */
+.headerContainer {
+  padding: 12px 16px;
+  gap: 10px;
+}
+.headerContainer > a {
+  min-width: 0;
+}
+.headerContainer > a img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+.headerActions {
+  flex-shrink: 0;
+  gap: 10px;
+}
+.enquireButton {
+  font-size: 14px;
+  width: auto;
+  padding: 10px 12px;
+}
+.mobileMenu {
+  display: flex;
+  align-items: center;
+}
+.navList {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--surface-secondary);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  z-index: 100;
+  border: 3px solid var(--accent);
+}
+
+/* Hero */
+.hero {
+  min-height: auto;
+  padding: 150px 20px 35px;
+  background-position: center;
+}
+.hero h1 {
+  font-size: 38px;
+  line-height: 48px;
+}
+.heroDetails {
+  font-size: 24px;
+}
+.heroPrice {
+  flex-direction: row;
+  gap: 5px;
+}
+.heroPriceLeft,
+.heroPriceRight {
+  padding-left: 15px;
+}
+.heroCurrentPrice {
+  font-size: 80px;
+}
+.mediaButtons {
+  padding-top: 10px;
+  justify-content: flex-start;
+  flex-direction: row;
+  font-size: 14px;
+}
+.viewImagesButton, .watchVideoButton, .saveUpButton {
+  font-size: 14px;
+  padding: 12px 12px;
+}
+.watchVideoButton {
+  border: 1px solid #ffffff;
+}
+
+/* Section */
+.sectionName {
+  padding-bottom: 10px;
+}
+.sectionHeader {
+  line-height: 45px;
+  font-size: 30px;
+}
+
+/* Highlight */
+.highlightGrid {
+  grid-template-columns: 1fr;
+}
+.highlightContentChips {
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+/* Hotel */
+.hotels {
+  grid-template-columns: 1fr;
+}
+.hotelGallery > img:not(:last-child) {
+  display: none;
+}
+.last-child {
+  width: 100%;
+}
+.hotelGallery {
+  grid-template-columns: 1fr;
+}
+
+/* Overview */
+.overview {
+  grid-template-columns: 1fr;
+}
+.overviewGallery > img:not(:last-child) {
+  display: none;
+}
+.overviewGallery {
+  grid-template-columns: 1fr;
+}
+
+/* Destinations */
+.destinationTabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.destinationThreeColumns {
+  grid-template-columns: 1fr;
+}
+.destinationTwoColumns {
+  grid-template-columns: 1fr;
+}
+
+/* Excursions */
+.excursionsGrid {
+  grid-template-columns: 1fr;
+}
+
+/* Payment */
+.paymentGrid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 30px;
+}
+.paymentLeft {
+  grid-column: 1;
+}
+.paymentRight {
+  grid-column: 1;
+  grid-row: auto;
+}
+
+/* Testimonials */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* FinePrint */
+.finePrintGrid {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* SuccessMessage */
+.successMessage {
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+.footerHeader {
+  font-size: 16px;
+  line-height: 24px;
+}
+.backToTop {
+  font-size: 16px;
+}
 }
 
 /* auto fill */
