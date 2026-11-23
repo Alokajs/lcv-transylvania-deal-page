@@ -14,8 +14,13 @@ export default function Home () {
     const [name, price] = item.split(" - £");
     return { name, price: `£${price}` };
   });
+
   const finePrintItems = dealData.finePrint.match(/<li>[\s\S]*?<\/li>/g) || [];
   const [showAllFinePrint, setShowAllFinePrint] = useState(false);
+
+  const [activeTab, setActiveTab] = useState(0);
+  const destinationSections =
+  dealData.dealDestinations[0].destination.techneDestinationSection;
 return (
   <>
   {/* header */}
@@ -23,7 +28,7 @@ return (
     <div className={styles.headerContainer}>
       <Image
         src="/lcv-logo.png"
-        alt="Low Cost Vibes Logo."
+        alt="Low Cost Vibes."
         width={250}
         height={40}
       />
@@ -328,6 +333,60 @@ return (
          />
        </div>
     </section>
+    {/* dealDestinations */}
+    <section className={styles.dealDestinations}>
+      <p className={styles.sectionName}>05. Destinations</p>
+      <h2 className={styles.sectionHeader}>Discover Your Destinations</h2>
+      <h3 className={styles.destinationsLabel}>Bucharest, Romania *3 nights </h3>
+      <Image className={styles.destinationsImage}
+      src={dealData.dealDestinations[0].destination.image.path}
+      alt="Aerial view of a city at dusk with lit historic buildings, a domed roof, a river and a large lit building in the distance"
+      width={1392}
+      height={580}
+      />
+      <div className={styles.destinationsBlock}>
+        <div className={styles.destinationTabs}>
+          <button className={`${styles.destinationTabsBtn} ${activeTab === 0 ? styles.activeDestinationTab : ""}`} onClick={() => setActiveTab(0)}>A SNEAK PEAK</button>
+          <button className={`${styles.destinationTabsBtn} ${activeTab === 1 ? styles.activeDestinationTab : ""}`} onClick={() => setActiveTab(1)}>HIGHLIGHTS</button>
+          <button className={`${styles.destinationTabsBtn} ${activeTab === 2 ? styles.activeDestinationTab : ""}`} onClick={() => setActiveTab(2)}>SEASONS TO TRAVEL</button>
+          <button className={`${styles.destinationTabsBtn} ${activeTab === 3 ? styles.activeDestinationTab : ""}`} onClick={() => setActiveTab(3)}>WORTH A VISIT</button>
+          <button className={`${styles.destinationTabsBtn} ${activeTab === 4 ? styles.activeDestinationTab : ""}`} onClick={() => setActiveTab(4)}>DISCOVER MORE</button>
+          <button className={`${styles.destinationTabsBtn} ${activeTab === 5 ? styles.activeDestinationTab : ""}`} onClick={() => setActiveTab(5)}>CULTURE & TRADITIONS</button>
+        </div>
+        <div className={styles.destinationTabContent}>
+          <h3 className={styles.destinationTabHeading}>
+            {destinationSections[activeTab].techneDestinationSectionTitle.title}
+          </h3>
+        </div>
+        <div className={
+          activeTab === 3
+            ? styles.destinationThreeColumns
+            : activeTab === 4
+            ? styles.destinationTwoColumns
+            : ""
+          }>  
+          {destinationSections[activeTab].images
+            .filter((image) => image.description)
+            .map((image, index) => (
+              <div key={index} className={styles.destinationDescription}>
+                {activeTab === 3 && (
+                  <h4 className={`${styles.subHeader} ${styles.destinationDescriptionHeader}`}>
+                    {["Palace of Parliament", "Stavropoleos Church", "Village Museums"][index]}
+                  </h4>
+                )}  
+                {activeTab === 4 && (
+                  <h4 className={`${styles.subHeader} ${styles.destinationDescriptionHeader}`}>
+                    {["Romanian Athenaeum", "Spring Palace"][index]}
+                  </h4>
+                )}
+                <div dangerouslySetInnerHTML={{
+                  __html: image.description
+                }} />
+              </div>
+             ))}
+        </div>      
+      </div>
+      </section>    
     {/* excursions */}
     <section className={styles.excursions}>
       <p className={styles.sectionName}>06. Excursions</p>
@@ -335,7 +394,7 @@ return (
       <Image className={styles.excursionImage}
       src={dealData.excursionImage.path}
       alt="Three travel scenes: couple by blue-domed buildings at sunset, two people cycling on a pier, and friends taking a selfie at a night concert"
-      width={1472}
+      width={1392}
       height={769}
       />
       <div className={styles.excursionsGrid}>
@@ -417,7 +476,7 @@ return (
       <div className={styles.finePrintLeft}>
       <Image className={styles.finePrintImage}
       src={dealData.finePrintImage.path}
-      alt=""
+      alt="Two people's hands over a world map on a table, one holding a pen beside an open notebook and the other pointing at the map"
       width={802}
       height={443}
       />
@@ -475,6 +534,7 @@ return (
       )}
       </div>
     </section>
+
   </main>
   </>
 )}
