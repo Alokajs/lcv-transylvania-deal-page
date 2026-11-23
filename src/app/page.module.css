@@ -32,10 +32,6 @@
   cursor: pointer;
 }
 
-.navOpen {
-  display: flex;
-}
-
 .headerActions {
   display: flex;
   align-items: center;
@@ -1039,25 +1035,25 @@ p.priceBasis {
 @media (max-width: 768px) {
 /* Header */
 .headerContainer {
-  padding: 12px 16px;
   gap: 10px;
 }
 .headerContainer > a {
   min-width: 0;
 }
 .headerContainer > a img {
-  max-width: 100%;
+  max-width: 170px;
+  width: 100%;
   height: auto;
   position: relative;
 }
 .headerActions {
   flex-shrink: 0;
-  gap: 10px;
 }
 .enquireButton {
   font-size: 14px;
   width: auto;
   padding: 10px 12px;
+  width: 150px;
 }
 .mobileMenu {
   display: flex;
@@ -1220,6 +1216,9 @@ p.priceBasis {
 .backToTop {
   font-size: 16px;
 }
+}
+.navOpen {
+  display: flex;
 }
 
 /* auto fill */

@@ -55,7 +55,7 @@ return (
           Enquire now
         </a>
         <button type="button" className={styles.mobileMenu} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation" aria-expanded={isMenuOpen}>
-          <Image src="/menu.svg" alt="" width={28} height={28} />
+          <Image src="/menu.svg" alt="" width={38} height={38} />
         </button>
       </div>
     </div>
