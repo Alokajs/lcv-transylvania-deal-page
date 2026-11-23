@@ -410,6 +410,59 @@ return (
          ))}
       </div>
     </section>
+    {/* Payment */}
+    <section id="payment" className={styles.payment}>
+      <p className={styles.sectionName}>07. Payment</p>
+      <h2 className={styles.sectionHeader}>Your Payment Plan</h2>
+      <p className={`${styles.sectionContent} ${styles.paymentSubheader}`}><span className={styles.sectionContentBold}>Low Deposits:</span> The first low deposit, due per person, will be presented at the time of booking.</p>
+      <div className={styles.paymentGrid}>
+        <div className={styles.paymentLeft}>
+          <div className={styles.paymentCard}>
+            <p className={`${styles.itineraryCardNo} ${styles.paymentCardNo}`}>01</p>
+            <div className={styles.paymentCardContent}>
+            <h3 className={`${styles.subHeader} ${styles.paymentHeader}`}><span className={styles.paymentHighlight}>25%</span> Low deposit</h3>
+            <p className={styles.sectionContent}>Initially, a 25% low deposit of the total holiday cost is required</p>
+            </div>
+          </div>
+        
+       
+          <div className={styles.paymentCard}>
+            <p className={`${styles.itineraryCardNo} ${styles.paymentCardNo}`}>02</p>
+            <div className={styles.paymentCardContent}>
+            <h3 className={`${styles.subHeader} ${styles.paymentHeader}`}><span className={styles.paymentHighlight}>Monthly</span> Balance</h3>
+            <p className={styles.sectionContent}>The balance is settled monthly at the time of booking, as agreed upon between the lead passenger and the travel consultant.</p>
+            </div>
+          </div>
+        
+        
+          <div className={styles.paymentCard}>
+            <p className={`${styles.itineraryCardNo} ${styles.paymentCardNo}`}>03</p>
+            <div className={styles.paymentCardContent}>
+            <h3 className={`${styles.subHeader} ${styles.paymentHeader}`}><span className={styles.paymentHighlight}>35%</span> Final payment</h3>
+            <p className={styles.sectionContent}>The final 35% will be settled 6 weeks before departure.</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.paymentRight}>
+          <Image className={styles.paymentImage}
+            src={dealData.paymentImage.path}
+            alt="Payment logos: Visa, Mastercard, Amex, Google Pay, Apple Pay, PayPal, Super, Klarna, Clearpay, Link and Direct Debit"
+            width={950}
+            height={524}        
+          />
+          <p className={styles.paymentMore}>
+            <Image
+              src="/telephone.svg"
+              alt=""
+              width={16}
+              height={16}
+            />
+            <span>You can customise your payment plan by speaking to your Low Cost Vibes expert.</span>
+         </p>
+        </div>
+      </div>
+
+    </section>
     {/* Testimonials */}
     <section className={styles.testimonials}>
       <p className={styles.sectionName}>08. Testimonials</p>

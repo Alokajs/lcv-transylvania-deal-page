@@ -555,7 +555,7 @@ p.priceBasis {
 
 .destinationTabs {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 31px;
   letter-spacing: 0.02em;
@@ -672,6 +672,120 @@ p.priceBasis {
   border: 1px solid transparent;
   border-radius: 12px;
   padding: 8px 4px;
+}
+
+/* Payment */
+.payment {
+  padding: 18px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+  align-self: center;
+}
+
+.paymentSubheader {
+  border: 3px solid var(--accent);
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 21px !important;
+}
+
+.paymentGrid {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  column-gap: 50px;
+  row-gap: 0px;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.paymentLeft {
+  grid-column: 1;
+}
+
+.paymentRight {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: center;
+}
+
+.paymentLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 45px
+}
+
+.paymentCard {
+  position: relative;
+  width: 100%;
+}
+
+.paymentCardNo {
+  position: absolute;
+  top: -28px !important;
+  left: 0;
+  z-index: 1;
+}
+
+.paymentCardContent {
+  background-color: var(--surface-secondary);
+  border: 3px solid var(--primary);
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  gap: 15px;
+  padding: 20px 24px;
+}
+
+.paymentHeader {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.paymentHeader::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0;
+  bottom: -10px;
+  height: 2px;
+  background-color: var(--border);
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.sectionContentBold {
+  font-weight: 700;
+}
+
+.paymentHighlight {
+  font-size: 31px;
+}
+
+.paymentImage {
+  border-radius: 15px;
+  width: 100%;
+}
+
+.paymentMore{
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Testimonials */
@@ -812,7 +926,7 @@ p.priceBasis {
   max-width: 100%;
   background-color: var(--primary);
   color: #ffffff;
-  border-color: 1px solid var(--primary);
+  border: 1px solid var(--primary);
   appearance: none;
   outline: none;
 }
