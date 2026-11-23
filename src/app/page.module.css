@@ -173,7 +173,6 @@ p.priceBasis {
 
 .heroButton:hover, .watchVideoButton:hover {
   opacity: 0.90;
-
 }
 
 .mediaButtons {
@@ -551,6 +550,7 @@ p.priceBasis {
 .destinationsImage {
   border-radius: 15px;
   width: 100%;
+  padding-top: 5px;
 }
 
 .destinationTabs {
@@ -765,6 +765,87 @@ p.priceBasis {
   margin-top: 20px;
 }
 
+/* Enquiry */
+.enquiry {
+  padding: 18px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.enquiryDetail {
+ display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 5px;
+}
+
+.enquiryDetail label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+
+.enquiryDetail input,
+.enquiryDetail textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: var(--surface);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+.error {
+  color: var(--error);
+}
+
+.formButton {
+  margin: 0 auto;
+  margin-top: 15px;
+  max-width: 100%;
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: 1px solid var(--primary);
+  appearance: none;
+  outline: none;
+}
+.formButton:hover {
+  opacity: 0.96 !important;
+}
+
+/* successMessage */
+.successMessage {
+  padding: 16px;
+  background-color: #EAF5EF;
+  border: 1px solid var(--success);
+  border-radius: 8px;
+  color: var(--success);
+  margin-top: 20px;
+  width: 50%;
+  text-align: center;
+}
 
 
+/* auto fill */
+.enquiryDetail input:-webkit-autofill,
+.enquiryDetail input:-webkit-autofill:hover,
+.enquiryDetail input:-webkit-autofill:focus,
+.enquiryDetail textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--foreground);
+  caret-color: var(--foreground);
+  box-shadow: 0 0 0 1000px var(--surface) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
 
+/* focus state */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

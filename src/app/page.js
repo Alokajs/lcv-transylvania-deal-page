@@ -21,17 +21,21 @@ export default function Home () {
   const [activeTab, setActiveTab] = useState(0);
   const destinationSections =
   dealData.dealDestinations[0].destination.techneDestinationSection;
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 return (
   <>
   {/* header */}
-  <header className={styles.header}>
+  <header id="top" className={styles.header}>
     <div className={styles.headerContainer}>
-      <Image
+      <a href="#top">
+        <Image id="logo"
         src="/lcv-logo.png"
         alt="Low Cost Vibes."
         width={250}
         height={40}
       />
+      </a>
       <nav className={styles.navigation}>
         <ul className={styles.navList}>
           <li><a href="#overview">Overview</a></li>
@@ -105,7 +109,7 @@ return (
     </div>
     </section>
     {/* overview */}
-    <section className={styles.overview} style={{"--overview-image": `url(${dealData.overview.images[3].path})` }}>
+    <section id="overview" className={styles.overview} style={{"--overview-image": `url(${dealData.overview.images[3].path})` }}>
       <div className={styles.overviewLeft}>
         <p className={styles.sectionName}>01. Overview</p>
          <h2 className={styles.sectionHeader}>A Glimpse of Romania</h2>
@@ -250,7 +254,7 @@ return (
       </div>
     </section>
      {/* itineraries */}
-    <section className={styles.itineraries}>
+    <section id="itinerary" className={styles.itineraries}>
         <p className={styles.sectionName}>03. Itinerary</p>
       <h2 className={styles.sectionHeader}>Your Journey, Day by Day</h2>
         <div className={styles.itineraryBlock}>
@@ -279,7 +283,7 @@ return (
        </button>
     </section>
     {/* hotels */}
-    <section className={styles.hotels} style={{"--hotels-image": `url(${dealData.hotels[0].images[4].path})` }}>
+    <section id="hotel" className={styles.hotels} style={{"--hotels-image": `url(${dealData.hotels[0].images[4].path})` }}>
      <div className={styles.hotelLeft}>
       <p className={styles.sectionName}>04. Hotel</p>
       <h2 className={styles.sectionHeader}>Your Stay in Bucharest</h2>
@@ -334,7 +338,7 @@ return (
        </div>
     </section>
     {/* dealDestinations */}
-    <section className={styles.dealDestinations}>
+    <section id="destinations" className={styles.dealDestinations}>
       <p className={styles.sectionName}>05. Destinations</p>
       <h2 className={styles.sectionHeader}>Discover Your Destinations</h2>
       <h3 className={styles.destinationsLabel}>Bucharest, Romania *3 nights </h3>
@@ -388,7 +392,7 @@ return (
       </div>
       </section>    
     {/* excursions */}
-    <section className={styles.excursions}>
+    <section id="excursions" className={styles.excursions}>
       <p className={styles.sectionName}>06. Excursions</p>
       <h2 className={styles.sectionHeader}>Experiences Beyond the Ordinary</h2>
       <Image className={styles.excursionImage}
@@ -534,7 +538,45 @@ return (
       )}
       </div>
     </section>
-
+    {/* Enquiry */}
+    <section id="enquiry" className={styles.enquiry}>
+      <p className={styles.sectionName}>11. Enquiry</p>
+      <h2 className={styles.sectionHeader}>Make an Enquiry</h2>
+      <h3 className={styles.subHeader}>Mysterious Vibes in Transylvania</h3>
+      <div className={styles.enquiryLeft}>
+        {!isSubmitted ? (<form className={styles.enquiryForm} onSubmit={(e) => { e.preventDefault(); setIsSubmitted(true); }}>
+        <div className={styles.enquiryDetail}>
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div className={styles.enquiryDetail}>
+          <label htmlFor="email">
+          Email <span className={styles.error}>*</span>
+          </label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div className={styles.enquiryDetail}>
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" />
+        </div>
+        <button type="submit" className={`${styles.heroButton} ${styles.formButton}`}>
+          <span>Enquire now</span>
+          <Image
+            src="/arrow-white.svg"
+            alt=""
+            width={16}
+            height={16}
+          />
+       </button>
+    </form>
+    ) : (
+    <div className={styles.successMessage} role="status">
+      <p>Thank you! Your enquiry has been submitted successfully.</p>
+    </div>
+    )}
+      </div>
+      <div className={styles.enquiryRight}></div>
+      </section>
   </main>
   </>
 )}
