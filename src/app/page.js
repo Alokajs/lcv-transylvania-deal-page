@@ -23,6 +23,8 @@ export default function Home () {
   dealData.dealDestinations[0].destination.techneDestinationSection;
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [openFaq, setOpenFaq] = useState(null);
 return (
   <>
   {/* header */}
@@ -423,18 +425,14 @@ return (
             <h3 className={`${styles.subHeader} ${styles.paymentHeader}`}><span className={styles.paymentHighlight}>25%</span> Low deposit</h3>
             <p className={styles.sectionContent}>Initially, a 25% low deposit of the total holiday cost is required</p>
             </div>
-          </div>
-        
-       
+          </div>       
           <div className={styles.paymentCard}>
             <p className={`${styles.itineraryCardNo} ${styles.paymentCardNo}`}>02</p>
             <div className={styles.paymentCardContent}>
             <h3 className={`${styles.subHeader} ${styles.paymentHeader}`}><span className={styles.paymentHighlight}>Monthly</span> Balance</h3>
             <p className={styles.sectionContent}>The balance is settled monthly at the time of booking, as agreed upon between the lead passenger and the travel consultant.</p>
             </div>
-          </div>
-        
-        
+          </div>    
           <div className={styles.paymentCard}>
             <p className={`${styles.itineraryCardNo} ${styles.paymentCardNo}`}>03</p>
             <div className={styles.paymentCardContent}>
@@ -525,6 +523,30 @@ return (
         </div>
       </div>      
     </section>
+    {/* FAQs */}
+    <section id="faqs" className={styles.faqs}>
+      <p className={styles.sectionName}>09. FAQs</p>
+      <h2 className={styles.sectionHeader}>Everything You Need to Know</h2>
+      <div className={styles.faqList}>
+        {dealData.dealFAQs.map((faq) => (
+          <div className={styles.faqItem} key={faq.id}>
+            <div className={styles.faqQuestion}>
+              <button type="button" className={styles.faqArrow} onClick={() => setOpenFaq(openFaq === faq.id ? null : faq.id)} aria-expanded={openFaq === faq.id}>
+                {openFaq === faq.id ? (
+                  <Image src="/play-triangle down.svg" alt="" width={30} height={28} />
+                ) : (
+                  <Image src="/play-triangle.svg" alt="" width={28} height={30} />
+                )}
+              </button>
+              <h3 className={styles.subHeader}>{faq.question}</h3>
+            </div>
+            {openFaq === faq.id && (
+              <div className={styles.faqAnswer} dangerouslySetInnerHTML={{ __html: faq.answer }} />
+            )}
+          </div>
+        ))}              
+        </div>
+      </section>
      {/* FinePrint */}
     <section className={styles.finePrint}>
       <p className={styles.sectionName}>10. Fine Print</p>
@@ -629,6 +651,29 @@ return (
     )}
       </div>
       <div className={styles.enquiryRight}></div>
+      </section>
+      {/* Footer */}
+      <section className={styles.footer}>
+        <div className={styles.footerRight}>
+          <a href="#top">
+        <Image id="logo"
+        src="/lcv-logo.png"
+        alt="Low Cost Vibes."
+        width={250}
+        height={40}
+      />
+      </a>
+      <h3 className={styles.footerHeader}>MYSTERIOUS VIBES IN TRANSYLVANIA</h3>
+        </div>
+        <a href="#top" className={styles.backToTop}>
+      <span>Back to top</span>
+      <Image
+        src="/up-arrow.svg"
+        alt=""
+        width={16}
+        height={16}
+      />
+    </a>
       </section>
   </main>
   </>
