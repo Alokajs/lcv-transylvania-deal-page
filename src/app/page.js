@@ -343,6 +343,143 @@ return (
          <div className={styles.sectionContent} dangerouslySetInnerHTML={{__html: dealData.hotels[0].description }}
          />
        </div>
+       <section className={styles.hotelAmenities}>
+        <div className={styles.amenitiesCard}>
+          <h3 className={styles.amenitiesTitle}>
+            <Image 
+            src="/hotel 2.svg" 
+            alt=""
+            width={27} 
+            height={20} 
+            />
+            Hotel amenities
+          </h3>
+          <button className={styles.viewMoreButton} type="button">
+            <span>View more</span>
+            <Image
+              src="/chevron-down.svg"
+              alt=""
+              width={16}
+              height={16}
+            />
+          </button>
+          <div className={styles.amenitiesList}>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/hotel-free-parking.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Free parking</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/hotel-wifi.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Free Internet (WiFi)</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/hotel-shuttle-bus.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Shuttle bus service</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/hotel-business-center.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Business Center with Internet Access</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/hotel-conference-facilities.svg" 
+              alt="" 
+              width={20} 
+              height={20} 
+              />
+              <span>Conference facilities</span>
+            </div>
+            </div>
+            </div>
+
+            <div className={styles.amenitiesCard}>
+          <h3 className={styles.amenitiesTitle}>
+            <Image 
+            src="/room-amenities.svg" 
+            alt=""
+            width={27} 
+            height={20} 
+            />
+            Room amenities
+          </h3>
+          <button className={styles.viewMoreButton} type="button">
+            <span>View more</span>
+            <Image
+              src="/chevron-down.svg"
+              alt=""
+              width={16}
+              height={16}
+            />
+          </button>
+          <div className={styles.amenitiesList}>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/room-flatscreen-tv.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Flatscreen TV</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/room-housekeeping.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Housekeeping</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/room-service.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Room service</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/hotel-bar-lounge.svg" 
+              alt="" 
+              width={25} 
+              height={25} 
+              />
+              <span>Minibar</span>
+            </div>
+            <div className={styles.amenityItem}>
+              <Image 
+              src="/room-seating-area.svg" 
+              alt="" 
+              width={20} 
+              height={20} 
+              />
+              <span>Seating area</span>
+            </div>
+            </div>
+        </div>
+       </section>
     </section>
     {/* dealDestinations */}
     <section id="destinations" className={styles.dealDestinations}>

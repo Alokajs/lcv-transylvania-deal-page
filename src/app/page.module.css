@@ -515,6 +515,76 @@ p.priceBasis {
   align-self: center;
 }
 
+/* Hotel Amenities */
+.hotelAmenities {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  background-color: transparent;
+  padding: 24px;
+}
+
+.amenitiesCard {
+  background-color: rgba(235, 239, 246, 0.55);
+  border: 1px solid rgba(217, 221, 229, 0.65);
+  border-radius: 17px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.amenitiesTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.viewMoreButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.amenitiesList {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 24px;
+}
+
+.amenityItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  min-height: 90px;
+  padding: 0 10px;
+  border-right: 1px solid var(--border);
+  color: var(--foreground);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.amenityItem:last-child {
+  border-right: none;
+}
+
  /* dealDestinations */
  .dealDestinations {
   padding: 18px 20px 0px;
@@ -995,8 +1065,9 @@ p.priceBasis {
   border-radius: 8px;
   color: var(--success);
   margin-top: 20px;
-  width: 50%;
+  width: 80%;
   text-align: center;
+  font-size: 20px;
 }
 
 /* Footer */
@@ -1143,6 +1214,33 @@ p.priceBasis {
 .hotelGallery {
   grid-template-columns: 1fr;
 }
+/* Hotel Amenities */
+.hotelAmenities {
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+.amenitiesCard {
+  padding: 16px;
+}
+.amenitiesTitle {
+  font-size: 17px;
+}
+.amenitiesList {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 12px;
+}
+.amenityItem {
+  min-height: 85px;
+  padding: 8px;
+  font-size: 13px;
+}
+.amenityItem:nth-child(2n) {
+  border-right: none;
+}
+.amenityItem:last-child {
+  border-right: none;
+}
 
 /* Overview */
 .overview {
@@ -1201,6 +1299,7 @@ p.priceBasis {
 /* SuccessMessage */
 .successMessage {
   width: 100%;
+  font-size: 16px;
 }
 
 /* Footer */
@@ -1237,3 +1336,5 @@ p.priceBasis {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+
